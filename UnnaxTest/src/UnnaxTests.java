@@ -220,7 +220,7 @@ class UnnaxTests {
         
     	else {
         	widget.close();
-        	fail("Case 10 failed, '" + error_msg + "' error not shown properly");
+        	fail("Case 10 failed, '" + error_msg + "' error not showing properly");
         } 	
     }
 }
