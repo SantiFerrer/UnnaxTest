@@ -88,7 +88,7 @@ public class UnnaxWidget {
 		
 	public UnnaxWidget startWidget() {
 		generateCredentials();
-		pressStart();	//For some reason the first start returns a 'session is not valid' error
+		pressStart();	//For some reason the first start returns a 'Session is not valid' error
 		pressClose();	//Closing the popup and opening it again solves it
 		pressStart();   //A more elegant solution should be implemented...
 		return this;
@@ -135,8 +135,7 @@ public class UnnaxWidget {
 		WebDriverWait wait = (new WebDriverWait(driver, seconds));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(checkmark));
 		long finish = System.currentTimeMillis();
-		if((int)((finish - start)/1000) == seconds) return true;
-		else return false;
+		return ((int)((finish - start)/1000) == seconds);
 	}
 		
 	public UnnaxWidget changeCallbackOK(String url) {
@@ -174,8 +173,7 @@ public class UnnaxWidget {
 			default: correctText = "SELECT YOUR BANK";
 		}
 			
-		if (text.equals(correctText)) return true;
-		else return false;
+		return (text.equals(correctText));
 	}
 		
 	public UnnaxWidget changeSingleBank(boolean bool) {
@@ -201,7 +199,7 @@ public class UnnaxWidget {
 		List<String> browserTabs = new ArrayList<String> (driver.getWindowHandles());
 		driver.switchTo().window(browserTabs.get(1));
 		wait.until(ExpectedConditions.urlContains(url));
-		return true;
+		return true; //Test will fail by itself if the url is not found
 	}
 		
 	public boolean checkTermsAndCondButton() {
@@ -232,7 +230,7 @@ public class UnnaxWidget {
 			WebElement logo = driver.findElement(logoImage);
 			return logo.getAttribute("src").equals(url);
 		}
-		else return true;
+		else return false; //If no logo is found (ShowLogo false) the test will fail
 	}
 		
 	public boolean checkRequestError(String error_msg) {
