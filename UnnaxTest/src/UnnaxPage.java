@@ -46,8 +46,8 @@ public class UnnaxPage {
 				);	
 	}
 		
-	public boolean testLink(By by, int page) {
-		changeCarrousel(page);
+	public boolean testLink(By by, int pageNum) {
+		changeCarrousel(pageNum);
 		clickElement(by);
 			
 		if (driver.findElements(By.xpath("//*[contains(text(), 'Page not found')]")).size() > 0) {
@@ -67,9 +67,9 @@ public class UnnaxPage {
 		return this;
 	}
 		
-	public UnnaxPage changeCarrousel(int page) {
-		if (page==0) clickElement(CarrousselPag0Button);
-		if (page==1) clickElement(CarrousselPag1Button);
+	public UnnaxPage changeCarrousel(int pageNum) {
+		if (pageNum==0) clickElement(CarrousselPag0Button);
+		if (pageNum==1) clickElement(CarrousselPag1Button);
 		return this;
 	}
 		
