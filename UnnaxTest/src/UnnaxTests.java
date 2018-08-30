@@ -18,10 +18,10 @@ class UnnaxTests {
 		
     	UnnaxPage page = new UnnaxPage();
     	
-    	if(page.testAllLinks()) page.close();
+    	if(page.testAllLinks()) page.quit();
     	
     	else {
-    		page.close();
+    		page.quit();
     		fail("Error found testing urls");
     	}
 	}
@@ -35,10 +35,10 @@ class UnnaxTests {
     	if(widget
     			.startWidget()
     			.checkWidgetReady()
-    	) widget.close();
+    	) widget.quit();
     	
     	else {
-    		widget.close();
+    		widget.quit();
     		fail("Case 1 failed, widget not starting properly");
     	}
 	}
@@ -53,10 +53,10 @@ class UnnaxTests {
     	if(widget
     			.startWidget()
     			.checkDropdownFirstValueIs(value)
-    	) widget.close();
+    	) widget.quit();
     		
     	else {
-    		widget.close();
+    		widget.quit();
     		fail("Case 2 failed, " + value + "not showing properly");
     	}
 	}
@@ -73,10 +73,10 @@ class UnnaxTests {
     		.selectBank("Banco Pueyo")
     		.doLogin("user","pass")
     		.checkAutoClose(seconds)
-    	) widget.close();
+    	) widget.quit();
     	
     	else {
-    		widget.close();
+    		widget.quit();
     		fail("Case 3 failed, autoclose not working properly");
     	}
 	}
@@ -95,10 +95,10 @@ class UnnaxTests {
 			.doLogin("user","pass","document")
 			.finishProcess()
     		.checkCallbackOK(callback_url)
-    	) widget.close();
+    	) widget.quit();
     	
     	else {
-    		widget.close();
+    		widget.quit();
     		fail("Case 4 failed, CallbackOK field not working properly");
     	}
     }
@@ -114,10 +114,10 @@ class UnnaxTests {
     		.changeLanguage(lang)
 			.startWidget()
 			.checkLanguage(lang)
-    	) widget.close();
+    	) widget.quit();
     	
     	else {
-    		widget.close();
+    		widget.quit();
     		fail("Case 5 failed, Language field not working properly");
     	}
     }
@@ -135,10 +135,10 @@ class UnnaxTests {
     		.selectBank("Triodos")
 			.doLogin("user","pass")
 			.checkSingleBank(singleBank)
-    	) widget.close();
+    	) widget.quit();
     	
     	else {
-    	    widget.close();
+    	    widget.quit();
     	    fail("Case 6 failed, Single Bank field not working properly");
     	}
     }
@@ -154,10 +154,10 @@ class UnnaxTests {
     		.changeCustomTermsAndCond(custom_url)
     		.startWidget()
     		.checkTermsAndCondButton(custom_url)
-    	) widget.close();
+    	) widget.quit();
     	
     	else {
-    	    widget.close();
+    	    widget.quit();
     	    fail("Case 7 failed, Custom T&C URL not working properly");
     	} 	
     }
@@ -173,10 +173,10 @@ class UnnaxTests {
         		.changeShowLogo(showLogo)
         		.startWidget()
         		.checkLogoAppearance(showLogo)
-        	) widget.close();
+        	) widget.quit();
         
     	else {
-    		widget.close();
+    		widget.quit();
         	fail("Case 8 failed, Show Logo not working properly");
         } 	
     }
@@ -193,10 +193,10 @@ class UnnaxTests {
         		.changeShowLogo(true)
         		.startWidget()
         		.checkLogoUrl(urlLogo)
-        	) widget.close();
+        	) widget.quit();
        
     	else {
-        	widget.close();
+        	widget.quit();
         	fail("Case 9 failed, URL Logo not working properly");
         } 	
     }
@@ -216,10 +216,10 @@ class UnnaxTests {
         		.pressClose()
         		.pressStart()
         		.checkRequestError(error_msg)
-        	) widget.close();
+        	) widget.quit();
         
     	else {
-        	widget.close();
+        	widget.quit();
         	fail("Case 10 failed, '" + error_msg + "' error not showing properly");
         } 	
     }

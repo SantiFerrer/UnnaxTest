@@ -72,8 +72,8 @@ public class UnnaxPage {
 		return this;
 	}
 		
-	public void close() {
-		driver.close();
+	public void quit() {
+		driver.quit();
 	}
 }
 

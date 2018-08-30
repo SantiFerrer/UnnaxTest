@@ -40,7 +40,8 @@ public class UnnaxWidget {
 	By logoImage = By.className("m-t-xs");
 	By errorMessage = By.cssSelector("code");
 	
-	public UnnaxWidget() {		
+	public UnnaxWidget() {
+
 	    driver.manage().window().maximize();
 	    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	    driver.get("http://test.unnax.com/");	
@@ -85,8 +86,8 @@ public class UnnaxWidget {
 		return isPresent;
 	}
 		
-	public void close() {
-		driver.close();
+	public void quit() {
+		driver.quit();
 	}
 		
 	public UnnaxWidget startWidget() {
@@ -204,8 +205,8 @@ public class UnnaxWidget {
 		List<String> browserTabs = new ArrayList<String> (driver.getWindowHandles());
 		driver.switchTo().window(browserTabs.get(1));
 		wait.until(ExpectedConditions.urlContains(url));
-		driver.close();
-		driver.switchTo().window(browserTabs.get(0));
+//		driver.close();
+//		driver.switchTo().window(browserTabs.get(0));
 		return true;
 	}
 		
