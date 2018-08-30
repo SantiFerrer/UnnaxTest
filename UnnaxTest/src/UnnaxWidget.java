@@ -41,7 +41,6 @@ public class UnnaxWidget {
 	By errorMessage = By.cssSelector("code");
 	
 	public UnnaxWidget() {
-
 	    driver.manage().window().maximize();
 	    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	    driver.get("http://test.unnax.com/");	
@@ -72,7 +71,6 @@ public class UnnaxWidget {
 	}
 		
 	public boolean checkWidgetReady() {
-
 		switchToFrame();
 		return (driver.findElement(unnaxSelector).isDisplayed() && driver.findElement(linkTermsAndCond).isDisplayed());		
 	}
