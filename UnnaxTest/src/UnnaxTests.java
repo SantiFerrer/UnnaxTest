@@ -8,6 +8,7 @@ class UnnaxTests {
 	
 	@BeforeAll
 	public static void setUp() {
+		//Change or remove to use your own chromedriver
 		System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\Drivers\\chromedriver.exe");
 	}
 	
