@@ -74,11 +74,7 @@ public class UnnaxWidget {
 	public boolean checkWidgetReady() {
 
 		switchToFrame();
-		if(
-			driver.findElement(unnaxSelector).isDisplayed() &&
-			driver.findElement(linkTermsAndCond).isDisplayed()
-		) return true;
-		else return false;			
+		return (driver.findElement(unnaxSelector).isDisplayed() && driver.findElement(linkTermsAndCond).isDisplayed());		
 	}
 		
 	public boolean isPresent (By by) {
@@ -205,8 +201,6 @@ public class UnnaxWidget {
 		List<String> browserTabs = new ArrayList<String> (driver.getWindowHandles());
 		driver.switchTo().window(browserTabs.get(1));
 		wait.until(ExpectedConditions.urlContains(url));
-//		driver.close();
-//		driver.switchTo().window(browserTabs.get(0));
 		return true;
 	}
 		

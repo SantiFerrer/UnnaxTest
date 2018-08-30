@@ -19,6 +19,7 @@ public class UnnaxPage {
 	By InsurtechSectorButton = By.xpath("//a[@href='/en/insurtech-sector']/button");
 	By P2PSectorButton = By.xpath("//a[@href='/en/p2p-economy']/button");
 	By RetailSectorButton = By.xpath("//a[@href='/en/retail-sector']/button");
+	
 	By CarrousselPag0Button = By.xpath("//button[@data-page='0']");
 	By CarrousselPag1Button = By.xpath("//button[@data-page='1']");
 	
