@@ -152,12 +152,12 @@ public class UnnaxWidget {
 		
 	public boolean checkCallbackOK(String url) {			
 		wait.until(ExpectedConditions.urlContains(url));
-		return true;
+		return true; //Test will fail by itself if the url is not found
 	}
 		
 	public UnnaxWidget changeLanguage(String lang) {
 		Select language = new Select(driver.findElement(languageDropdown));
-		language.selectByVisibleText(lang); 	    	
+		language.selectByVisibleText(lang);
 		return this;
 	}
 		
