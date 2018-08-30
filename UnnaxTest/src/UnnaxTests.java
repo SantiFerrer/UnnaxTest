@@ -19,6 +19,7 @@ class UnnaxTests {
     	UnnaxPage page = new UnnaxPage();
     	
     	if(page.testAllLinks()) page.close();
+    	
     	else {
     		page.close();
     		fail("Error found testing urls");
@@ -35,6 +36,7 @@ class UnnaxTests {
     			.startWidget()
     			.checkWidgetReady()
     	) widget.close();
+    	
     	else {
     		widget.close();
     		fail("Case 1 failed, widget not starting properly");
@@ -72,6 +74,7 @@ class UnnaxTests {
     		.doLogin("user","pass")
     		.checkAutoClose(seconds)
     	) widget.close();
+    	
     	else {
     		widget.close();
     		fail("Case 3 failed, autoclose not working properly");
@@ -93,6 +96,7 @@ class UnnaxTests {
 			.finishProcess()
     		.checkCallbackOK(callback_url)
     	) widget.close();
+    	
     	else {
     		widget.close();
     		fail("Case 4 failed, CallbackOK field not working properly");
@@ -111,6 +115,7 @@ class UnnaxTests {
 			.startWidget()
 			.checkLanguage(lang)
     	) widget.close();
+    	
     	else {
     		widget.close();
     		fail("Case 5 failed, Language field not working properly");
@@ -131,6 +136,7 @@ class UnnaxTests {
 			.doLogin("user","pass")
 			.checkSingleBank(singleBank)
     	) widget.close();
+    	
     	else {
     	    widget.close();
     	    fail("Case 6 failed, Single Bank field not working properly");
@@ -149,6 +155,7 @@ class UnnaxTests {
     		.startWidget()
     		.checkTermsAndCondButton(custom_url)
     	) widget.close();
+    	
     	else {
     	    widget.close();
     	    fail("Case 7 failed, Custom T&C URL not working properly");
@@ -167,10 +174,11 @@ class UnnaxTests {
         		.startWidget()
         		.checkLogoAppearance(showLogo)
         	) widget.close();
-        	else {
-        	    widget.close();
-        	    fail("Case 8 failed, Show Logo not working properly");
-        	} 	
+        
+    	else {
+    		widget.close();
+        	fail("Case 8 failed, Show Logo not working properly");
+        } 	
     }
     
     @Test
@@ -186,10 +194,11 @@ class UnnaxTests {
         		.startWidget()
         		.checkLogoUrl(urlLogo)
         	) widget.close();
-        	else {
-        	    widget.close();
-        	    fail("Case 9 failed, URL Logo not working properly");
-        	} 	
+       
+    	else {
+        	widget.close();
+        	fail("Case 9 failed, URL Logo not working properly");
+        } 	
     }
     
     @Test
@@ -208,9 +217,10 @@ class UnnaxTests {
         		.pressStart()
         		.checkRequestError(error_msg)
         	) widget.close();
-        	else {
-        	    widget.close();
-        	    fail("Case 10 failed, '" + error_msg + "' error not shown properly");
-        	} 	
+        
+    	else {
+        	widget.close();
+        	fail("Case 10 failed, '" + error_msg + "' error not shown properly");
+        } 	
     }
 }

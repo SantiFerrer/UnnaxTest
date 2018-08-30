@@ -91,9 +91,9 @@ public class UnnaxWidget {
 		
 	public UnnaxWidget startWidget() {
 		generateCredentials();
-		pressStart();
-		pressClose();
-		pressStart();
+		pressStart();	//For some reason the first start return a 'session is not valid' error
+		pressClose();	//Closing the popup and opening it again solves it
+		pressStart();   //A more elegant solution should be implemented...
 		return this;
 	}
 		
